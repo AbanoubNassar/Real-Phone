@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right , #9c27b0 ,#8ecdff);
+}
+
+nav{
+    width: 80%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.logo{
+    flex-basis:20%;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.information{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top:50%;
+    left: -10%;
+    transform: translateY(-50%);
+    
+}
+
+#circle{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    transition: 1s;
+}
+
+.feature{
+    position: absolute;
+    display: flex;
+    color: white;
+}
+
+.feature div{
+    margin-left: 30px;
+    margin-top: 8px;
+}
+
+.feature div p{
+    margin-top: 8px;
+}
+
+.feature img{
+    width: 70px;
+}
+
+.one{
+    top: 450px;
+    right: 50px;
+}
+
+.two{
+    top: 150px;
+    left: 350px;
+    transform: rotate(-90deg);
+}
+
+.three{
+    bottom: 450px;
+    left: 50px;
+    transform: rotate(-180deg);
+    
+}
+
+.four{
+    bottom: 150px;
+    right: 350px;
+    transform: rotate(-270deg);
+
+}
+
+.mobile{
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.controls{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.controls h3{
+    margin: 10px 0px;
+    color: #fff;
+}
+
+#upBtn{
+    width: 15px;
+    cursor: pointer;
+}
+
+#downBtn{
+    width: 15px;
+    cursor: pointer; 
+    transform: rotate(180deg);
+}
+
+.overlay{
+    width: 0;
+    height: 0;
+    border-top: 500px solid #fff;
+    border-right: 500px solid transparent;
+    border-left: 500px solid #fff;
+    border-bottom: 500px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+@media screen and (max-width: 960px){
+
+    
+    #mobile-menu{
+        position: absolute;/*علشان يبقى طليق في الصفحة*/
+        top:30%; /*علشان يبقى فوقيه قد 20% ويطلع لفوق*/
+        right: 5%; /*علشان يجي ناحية اليمين لكن يكون على يمينه مساحة 5% بس*/
+        transform: translate(30%,5%); /* بتعمل على شده وتوسيطه في المكان اللي انا عاوزه */
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: royalblue;
+    }
+
+    nav{
+        display: block;
+        width:100%;
+        height:100px;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to left , #9c27b0 ,#8ecdff);
+        bottom: 1px solid blue;
+        overflow: hidden;
+        transition: 1s;
+    }
+
+    nav .logo{
+        margin: 30px;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        height: fit-content;
+        transition: 1s;
+
+    }
+
+    nav ul li{
+       padding: 10px 0px;
+    }
+
+    #nav_bar.active{
+      overflow: auto;
+      height: 280px;
+    }
+
+    #mobile-menu.active{
+        display: inline-block;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0; /*علشان يختفي*/
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg); /*بنزلة من فوق لتحت 8 بيكسل وبخليه يلف 45 درجة*/
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);/*علشان يكون معاكس لرقم واحد ويعمله علامة الخطأ*//* بطلعه من تحت لفوق 8 بيكسل وبخليه يلف سالب 45 درجة*/
+    }
+
+    .information{
+        left: -30%;        
+    }
+
+    .controls{
+        right: 3%;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    .information{
+        left: -40%;        
+    }
+
+    .controls{
+        right: 1%;
+        top: 25%;
+    }
+}
+
+@media screen and (max-width:480px){
+    .main{
+        height: 1000px;
+    }
+
+    .information{
+        left: -60%;  
+        top: 400px;      
+    }
+
+    .controls{
+        left: 0.5%;
+        top: 40%;
+        width:fit-content;
+        padding: 50px 0px;
+        border-radius: 50%;
+        text-align: center;
+        background: linear-gradient(to right , #9c27b0 ,#8ecdff);
+    }
+
+    .controls h3{
+        display: inline-block;
+        margin: 0px 5px;
+        font-size: 18px;
+    }
+
+    #upBtn{
+        width: 15px;
+        cursor: pointer;
+        transform: rotate(90deg);
+    }
+    
+    #downBtn{
+        width: 15px;
+        cursor: pointer; 
+        transform: rotate(270deg);
+    }
+
+    .overlay{
+        border-top: 500px solid #fff;
+        border-right: 500px solid #fff;
+        border-left: 500px solid #fff;
+        border-bottom: 500px solid transparent;
+        position: absolute;
+    }
+
+     .mobile{
+        top: 45%;
+        left: 40%;
+    }
+
+}
+
